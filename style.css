@@ -1,0 +1,144 @@
+body {
+  font-family: sans-serif;
+  font-size: 15.5px;
+  color: #333;
+}
+ul,li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(60, 114, 147);
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+.p_img{
+  max-width: 300px;
+  /* max-height: 200px; */
+  padding-top:10px;
+}
+
+.clannad_img{
+  width: 145px;
+  padding-top:10px;
+}
+
+
+.profile_title{
+  padding-top:7px;
+  display:inline-block
+}
+
+
+.content{
+  margin-left:20%
+}
+
+.content{
+  padding-top:60px;
+  max-width:660px;
+}
+
+.links{
+  padding-top:5px;
+}
+
+.project_item a{
+  color: #333
+}
+
+
+.tool{
+  padding-bottom:3px;
+  padding-top:3px;
+}
+
+.bullet_point{
+  margin:0;
+  padding:0
+  paddding-left:5px;
+}
+
+
+.bullet_point li{
+  list-style-type: disc;#disc, circle
+}
+
+.left_top {
+position: sticky;
+top: 0;
+padding-top: 1%;
+background: rgba(255,255,255,0.7);
+}
+
+
+
+.sidebar {
+height: 100%;
+width: 20%;
+position: fixed;
+left: 0;
+top: 0;
+padding-top: 100px;
+/* background-color: grey; */
+}
+.sidebar div {
+padding: 8px;
+padding-left:30%;
+display: block;
+}
+
+.sb_title{
+  font-size: 20px;
+}
+
+
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.invisible{
+  color: white;
+}
+
+.li_padding{
+  padding: 4px 20px;
+}
+
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.p_elements{
+  width: 300px;
+  padding-right: 20px;
+  padding-top: 20px;
+}
+
+footer {
+  bottom: 0;
+  left: 0;
+  text-align:center;
+  padding-top:50px;
+  width: 100%;
+}
+
+
+
+@media screen and (max-width: 850px) {
+  .content {
+    margin:5%
+  }
+  .sidebar{
+    display:none;
+  }
+
+}

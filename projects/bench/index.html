@@ -1,0 +1,200 @@
+<html>
+  <head>
+    <title>Bench Press Queue</title>
+    <!-- JS -->
+    <script src='scripts/jquery.min.js'></script>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+     <!-- ajax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+    <!-- for sending an email -->
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <header id="header">
+      <span class="header_text">Bench Press Queue</span>
+    </header>
+
+    <div id='app'>
+      <div class="side-by-side">
+
+        <div id='left_side'>
+          <h2>Benches</h2>
+          <ol>
+            <!-- <li id="bench_1"></li>
+            <li id="bench_2"></li>
+            <li id="bench_3"></li>
+            <li id="bench_4"></li> -->
+            <li><span id="bench_1"></span> <span id="time_1"></span></li>
+            <li><span id="bench_2"></span> <span id="time_2"></span></li>
+            <li><span id="bench_3"></span> <span id="time_3"></span></li>
+            <li><span id="bench_4"></span> <span id="time_4"></span></li>
+          </ol>
+        </div>
+
+        <div id='right_side'>
+          <h2>Queue</h2>
+          <ol>
+            <li v-for ="i in queue" :id="queue.indexOf(i)">{{i}}</li>
+          </ol>
+        </div>
+      </div>
+
+
+      <!-- INPUT BAR -->
+      <div class="input_section">
+
+        <div>
+          Working in a pair (i.e. I have a spotter).&nbsp
+          <input id="spotter_yes" type="radio"></input>
+          <span>Yes&nbsp </span>
+          <input id="spotter_no" type="radio"></input>
+          <span>No</span>
+          <div id="spotter_message"></div>
+          <div class="twenty_seconds">
+          Note: In this version, we set the time from 20/40 minutes to 20/40 <span style="color:red">seconds</span> since this takes less time to see how the queue works.
+          </div>
+        </div>
+
+
+
+        <div class="side-by-side side_padding">
+          <div id="name_section">
+          <label>Name: <input class="input_bars_width" type="text" id="name_input" placeholder="Your name (Required)"></input>&nbsp&nbsp</label>
+          <br>
+          <label>email: <input class="input_bars_width" type="email" id="email_input" placeholder="Your email (Required)"></input>&nbsp&nbsp</label>
+        </div>
+        <div id="spotter_section" style="display:none;">
+          <label>Name: <input class="input_bars_width" type="text" id="name_input_spotter" placeholder="Partner's name (Required)"></input></label>
+          <br>
+          <label>email: <input class="input_bars_width" type="email" id="email_input_spotter" placeholder="Partner's email"></input></label>
+        </div>
+
+
+        </div>
+
+          <span id="buttons">
+            <button id="join_button">Join</button>
+            &nbsp
+            <button id="instructions_button">?</button>
+            &nbsp
+            <a href="./chat/chat.html" target="_blank">chat</a>
+          </span>
+      </div>
+      <hr>
+
+      <div id="contact_form">
+        <h2>Contact Us</h2>
+        <div class="form_message">Thank you for visiting the website. If you have any comments, please use the form below.</div>
+        <div>
+          <input class="input_underline" type="text" id="form_name" placeholder="Name">
+          <input class="input_underline" type="text" id="form_email" placeholder="Email">
+        </div>
+        <br>
+        <label for="form_type">Type of Comment:&nbsp</label>
+        <select id="form_drop_down">
+          <option value="review">Review</option>
+          <option value="violation">Report Violation</option>
+          <option value="other">Other type of comments</option>
+        </select>
+        <br>
+        <textarea class="input_underline" type="text" id="form_comment" placeholder="Comment (Required)"></textarea>
+        <button id="form_submit_button">Submit</button>
+      </div>
+
+
+
+    </div> <!-- end of id 'app'-->
+
+
+
+    <div class="center_1">
+      <div  id="instructions" class="inst_left">
+        <h3 class="inst_message_padding center">About This Website</h3>
+        <div class="inst_message_padding">
+          The website contains a queue for the bench press in the gym. There are four flat benches at the gym. And people in the queue get moved to the first one that opens.
+        </div>
+        <div>
+          <div>For a user to join the queue,</div>
+          <ol>
+            <li class="inst_list_font">type in name and email</li>
+            <li class="inst_list_font">press 'Join' button to join the queue</li>
+          </ol>
+        </div>
+        <div class="inst_message_padding">
+          As soon as a flat bench opens up, the user gets an email  from bench.press.queue@gmail.com, letting them know that it is their turn and they have 20 minutes to use it. After 20 minutes have passed, the user will get an email notifying them that the time is up.
+        </div>
+        <div>
+          Users can also work in a pair to use a bench. In that case, the pair gets 40 minutes to use one bench.
+        </div>
+        <h4>Chat</h4>
+        <div class="inst_message_padding">
+          Users can click 'chat' link next to the '?' button to open a webpage for them to chat.
+          Users may use the chat for reasons such as finding a spotter.</div>
+
+        <div style="text-align: center;">
+          <button id="instructions_close_button">Close</button>
+        </div>
+      </div> <!-- end of instruction panel -->
+  </div>
+
+
+
+
+
+
+
+  <div class="center_pop_up">
+    <div id="email_pop_up_1">
+      <div id="email_pop_up_html" class="message">You will receive an email when it is your turn</div>
+      <button id="email_close_button">Close</button>
+    </div>
+  </div>
+
+  <div class="center_pop_up">
+    <div id="type_name">
+      <div class="message">Please type in the name</div>
+      <button id="type_name_close_button">Close</button>
+    </div>
+  </div>
+
+  <div class="center_pop_up">
+    <div id="type_email">
+      <div class="message">Email is invalid</div>
+      <button id="type_email_close_button">Close</button>
+    </div>
+  </div>
+
+  <div class="center_pop_up">
+    <div id="form_submitted_popup">
+      <div class="message">Form submitted successfully</div>
+      <button id="form_submitted_popup_close_button">Close</button>
+    </div>
+  </div>
+
+  <div class="center_pop_up">
+    <div id="form_not_submitted_popup">
+      <div class="message">Please fill in the comment field</div>
+      <button id="form_not_submitted_popup_close_button">Close</button>
+    </div>
+  </div>
+
+
+
+
+
+    <footer>
+      <span class="footer_text">Copyright &copy; 2021 Team Dodgers</span>
+    </footer>
+
+      <script src='scripts/script.js'></script>
+
+  </body>
+</html>

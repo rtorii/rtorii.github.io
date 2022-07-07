@@ -1,0 +1,223 @@
+
+/* HEADER */
+#header{
+  /* position: sticky; top: 0; */
+  position: static;
+  top: 0;
+  text-align: center;
+  margin-bottom: 50px;
+  background-color: white;
+  box-shadow: 2px 2px 40px -20px gray inset;
+}
+.header_text{
+  font-size: 35px;
+}
+
+li{
+  font-size: 20px;
+}
+
+label{
+  font-weight: normal;
+}
+
+div{
+  font-size:15px;
+}
+
+select{
+  padding: 8px; /* Some padding */
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+.center{
+  text-align: center;
+}
+
+
+.twenty_seconds{
+  width: 70%;
+  font-weight: bold;
+  margin:0 auto;
+  text-align: center;
+}
+
+
+.side-by-side {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.side_padding{
+  padding-top:5px;
+}
+
+#left_side, #right_side{
+  width: 40%;
+  min-width: 400px;
+  /* border: 2px solid red; */
+}
+
+.center_1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+}
+
+#time_1, #time_2, #time_3, #time_4{
+  color: #888888;
+}
+
+.input_section{
+  text-align: center;
+  padding-bottom:40px;
+}
+
+.input_bars_width{
+  width:200px;
+}
+
+
+button, #join_button, #instructions_close_button, #email_close_button,
+#type_name_close_button, #type_email_close_button,#form_submit_button,
+#form_not_submitted_popup_close_button, #form_submitted_popup_close_button{
+  background-color: grey;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.message{
+  font-size: 20px;
+  padding-bottom: 8px;
+}
+#join_button:hover,#instructions_close_button:hover, #email_close_button:hover,
+#type_name_close_button:hover, #type_email_close_button:hover, #form_submit_button:hover,
+#form_not_submitted_popup_close_button:hover, #form_submitted_popup_close_button:hover{
+  background-color: #444444;
+}
+
+#instructions{
+  /* margin: auto; */
+  width: 60%;
+  z-index: 2;
+  border: solid;
+  background-color: white;
+  padding: 1% 3%;
+}
+
+#instructions_button{
+  border-radius: 50%;
+  border: solid 0.5px;
+  background-color: grey;
+  color: white;
+  font-size: 14px;
+}
+
+#instructions_button:hover{
+  background-color: #444444;
+}
+
+#email_pop_up_1, #type_name, #type_email, #form_submitted_popup, #form_not_submitted_popup{
+  padding: 10px 20px;
+  width: 100%;
+  z-index: 3;
+  border: solid;
+  background-color: white;
+  font-size: 30px;
+}
+
+.center_pop_up {
+  align-items: center;
+  text-align: center;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.input_underline{
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 1px solid black;
+}
+
+
+/* forms */
+
+#contact_form{
+  text-align: center;
+  margin-bottom:50px;
+}
+
+.form_message{
+  padding-bottom:20px;
+}
+
+#form_name, #form_email{
+  width: 180px;
+}
+
+#form_comment{
+  height: 80px;
+  width: 300px;
+
+}
+
+.inst_left{
+  text-align: left;
+}
+
+.inst_message_padding{
+  padding-bottom: 10px;
+}
+.inst_list_font{
+  font-size:15px;
+}
+
+
+
+
+
+
+/* FOOTER */
+footer{
+  position: fixed;
+  left:0;
+  bottom:0;
+  width:100%;
+  background-color: white;
+  box-shadow: 2px 2px 40px -20px gray inset;
+}
+
+.footer_text{
+  margin-left: 3%;
+  font-size: 15px;
+}
+
+
+
+/*  responsive */
+@media screen and (max-width: 767px) {
+  #instructions{
+    width: 80%;
+  }
+
+
+
+
+}

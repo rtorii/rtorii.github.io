@@ -1,0 +1,48 @@
+#header{
+  position: sticky; top: 0;
+  /* position: static; */
+  top: 0;
+  text-align: center;
+  margin-bottom: 50px;
+  background-color: white;
+  /* border: solid; */
+  box-shadow: 2px 2px 40px -20px gray inset;
+}
+.header_text{
+  font-size: 35px;
+}
+
+body{
+  font-size:16px;
+}
+
+
+.screen_padding{
+  padding-right: 15%;
+  padding-left: 15%;
+}
+
+
+
+.box_style{
+  background-color: lightgrey;
+  /* color: white; */
+  padding: 2px 4px;
+  border: none;
+  border-radius: 4px;
+}
+
+/* FOOTER */
+footer{
+  position: fixed;
+  left:0;
+  bottom:0;
+  width:100%;
+  background-color: white;
+  box-shadow: 2px 2px 40px -20px gray inset;
+}
+
+.footer_text{
+  margin-left: 3%;
+  font-size: 15px;
+}
